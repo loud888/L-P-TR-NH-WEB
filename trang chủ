@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang chủ - Tin tức điện tử</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Website Tin Tức</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="category.html">Danh mục</a></li>
+                <li><a href="article.html">Bài viết</a></li>
+                <li><a href="search.html">Tìm kiếm</a></li>
+                <li><a href="login.html">Đăng nhập</a></li>
+                <li><a href="admin/dashboard.html">Quản trị</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <main>
+        <section class="featured-news">
+            <h2>Tin Nổi Bật</h2>
+            <div class="slider">
+                <img src="assets/images/featured1.jpg" alt="Tin nổi bật 1">
+            </div>
+        </section>
+        
+        <section class="latest-news">
+            <h2>Bài viết mới nhất</h2>
+            <article>
+                <h3><a href="article.html">Tiêu đề bài viết</a></h3>
+                <p>Mô tả ngắn về bài viết...</p>
+            </article>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Website Tin Tức</p>
+    </footer>
+    
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
+
+<!-- category.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh mục - Tin tức điện tử</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Danh mục bài viết</h1>
+    </header>
+    <main>
+        <section class="category-list">
+            <h2>Bài viết trong danh mục</h2>
+            <article>
+                <h3><a href="article.html">Tiêu đề bài viết</a></h3>
+                <p>Mô tả ngắn...</p>
+            </article>
+        </section>
+    </main>
+</body>
+</html>
+
+<!-- article.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài viết - Tin tức điện tử</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Tiêu đề bài viết</h1>
+    </header>
+    <main>
+        <article>
+            <p>Nội dung bài viết chi tiết...</p>
+        </article>
+    </main>
+</body>
+</html>
+
+<!-- search.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tìm kiếm - Tin tức điện tử</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Kết quả tìm kiếm</h1>
+    </header>
+    <main>
+        <section>
+            <input type="text" placeholder="Nhập từ khóa...">
+            <button>Tìm kiếm</button>
+        </section>
+    </main>
+</body>
+</html>
+
+<!-- login.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đăng nhập - Tin tức điện tử</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Đăng nhập</h1>
+    </header>
+    <main>
+        <form>
+            <input type="text" placeholder="Tên đăng nhập">
+            <input type="password" placeholder="Mật khẩu">
+            <button>Đăng nhập</button>
+        </form>
+    </main>
+</body>
+</html>
+
+<!-- admin/dashboard.html -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản trị - Tin tức điện tử</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Bảng điều khiển quản trị</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Thống kê</h2>
+            <p>Thông tin tổng quan về bài viết, người dùng...</p>
+        </section>
+    </main>
+</body>
+</html>

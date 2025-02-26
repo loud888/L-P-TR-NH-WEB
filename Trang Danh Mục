@@ -1,1 +1,40 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Danh mục - Tin tức</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Danh mục: Thế giới</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="category.html">Thế giới</a></li>
+                <li><a href="category.html">Kinh tế</a></li>
+                <li><a href="category.html">Giải trí</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="category-news">
+        <article>
+            <img src="assets/images/news3.jpg" alt="Tin tức 3">
+            <h3><a href="article.html">Tiêu đề bài viết 3</a></h3>
+            <p>Mô tả ngắn bài viết...</p>
+        </article>
+
+        <article>
+            <img src="assets/images/news4.jpg" alt="Tin tức 4">
+            <h3><a href="article.html">Tiêu đề bài viết 4</a></h3>
+            <p>Mô tả ngắn bài viết...</p>
+        </article>
+    </section>
+
+    <footer>
+        <p>&copy; 2025 Tin tức 24h</p>
+    </footer>
+</body>
+</html>
 

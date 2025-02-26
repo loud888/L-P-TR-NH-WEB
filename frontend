@@ -1,0 +1,64 @@
+1. Trang chủ
+🔹 Chức năng chính:
+
+Hiển thị danh sách bài viết mới nhất và tin nổi bật (có thể dùng slider để hiển thị).
+Thanh menu điều hướng đến các danh mục tin tức chính.
+Thiết kế giao diện trực quan, thân thiện, hỗ trợ responsive (mobile, tablet).
+Banner hoặc ảnh chào mừng đặt ở vị trí nổi bật.
+🔹 Cách hoạt động:
+
+Khi người dùng truy cập trang chủ, hệ thống sẽ lấy danh sách các bài viết mới nhất từ CSDL và hiển thị.
+Nếu có tin nổi bật, hệ thống sẽ lấy các bài viết có gắn tag "nổi bật" để hiển thị lên slider.
+Thanh điều hướng giúp người dùng dễ dàng di chuyển giữa các danh mục tin tức.
+2. Trang danh mục
+🔹 Chức năng chính:
+
+Hiển thị danh sách các bài viết thuộc một danh mục cụ thể (VD: Thời sự, Công nghệ, Giải trí…).
+Hỗ trợ phân trang nếu số lượng bài viết lớn.
+Điều hướng quay lại trang chủ hoặc đến danh mục khác.
+🔹 Cách hoạt động:
+
+Khi người dùng chọn một danh mục từ menu, hệ thống sẽ gửi yêu cầu lấy dữ liệu bài viết thuộc danh mục đó từ CSDL.
+Kết quả hiển thị dưới dạng danh sách bài viết, có hỗ trợ phân trang để tránh tải quá nhiều dữ liệu một lúc.
+3. Trang chi tiết bài viết
+🔹 Chức năng chính:
+
+Hiển thị đầy đủ nội dung bài viết: tiêu đề, hình ảnh, ngày đăng, tác giả.
+Có thể có phần bình luận, chia sẻ lên mạng xã hội, hiển thị bài viết liên quan.
+🔹 Cách hoạt động:
+
+Khi người dùng nhấp vào một bài viết từ trang chủ hoặc trang danh mục, hệ thống sẽ lấy dữ liệu bài viết đó từ CSDL và hiển thị nội dung.
+Nếu có bình luận, hệ thống sẽ tải danh sách bình luận và hiển thị bên dưới.
+Hệ thống cũng lấy danh sách các bài viết liên quan cùng danh mục để hiển thị.
+4. Trang tìm kiếm
+🔹 Chức năng chính:
+
+Cho phép người dùng tìm kiếm bài viết theo từ khóa.
+Hiển thị danh sách bài viết liên quan đến từ khóa tìm kiếm.
+Hỗ trợ phân trang nếu có nhiều kết quả.
+🔹 Cách hoạt động:
+
+Khi người dùng nhập từ khóa vào thanh tìm kiếm, hệ thống sẽ gửi yêu cầu đến CSDL để tìm các bài viết có chứa từ khóa trong tiêu đề hoặc nội dung.
+Kết quả được hiển thị dưới dạng danh sách bài viết kèm theo link đến trang chi tiết.
+5. Trang đăng nhập/đăng ký
+🔹 Chức năng chính:
+
+Cho phép người dùng đăng ký tài khoản hoặc đăng nhập.
+Sau khi đăng nhập, hệ thống cấp quyền truy cập vào trang quản trị (nếu có).
+🔹 Cách hoạt động:
+
+Khi đăng ký, người dùng nhập thông tin (tên, email, mật khẩu), hệ thống lưu thông tin vào CSDL sau khi mã hóa mật khẩu.
+Khi đăng nhập, hệ thống kiểm tra email và mật khẩu, nếu đúng thì tạo phiên làm việc (session) cho người dùng.
+Nếu đăng nhập thành công, người dùng có thể truy cập các chức năng của trang quản trị.
+6. Các trang quản trị
+🔹 Chức năng chính:
+
+Dashboard: Hiển thị thống kê số lượng bài viết, người dùng, danh mục.
+Quản lý bài viết: Danh sách bài viết, thêm/sửa/xoá, duyệt bài (nếu có).
+Quản lý danh mục: Thêm/sửa/xoá danh mục tin tức.
+Quản lý người dùng: Cập nhật thông tin, phân quyền (Admin/Editor/User), khoá tài khoản nếu cần.
+🔹 Cách hoạt động:
+
+Người dùng phải đăng nhập mới có quyền truy cập.
+Khi vào trang quản trị, hệ thống kiểm tra quyền hạn để hiển thị các chức năng phù hợp.
+Các thao tác (thêm, sửa, xóa) được thực hiện trên CSDL thông qua giao diện web.

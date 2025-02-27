@@ -201,11 +201,5 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <section>
-            <h2>Thống kê hệ thống</h2>
-            <p>Hiển thị số lượng bài viết, người dùng, danh mục,...</p>
-        </section>
-    </main>
 </body>
 </html>

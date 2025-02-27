@@ -1,1 +1,27 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Chi tiết bài viết</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Tiêu đề bài viết</h1>
+    </header>
 
+    <article class="article-content">
+        <img src="assets/images/news1.jpg" alt="Hình ảnh bài viết">
+        <p>Ngày đăng: 26/02/2025</p>
+        <p>Tác giả: Nguyễn Văn A</p>
+        <p>Nội dung bài viết...</p>
+
+        <button>Chia sẻ Facebook</button>
+        <button>Chia sẻ Twitter</button>
+    </article>
+
+    <footer>
+        <p>&copy; 2025 Tin tức 24h</p>
+    </footer>
+</body>
+</html>

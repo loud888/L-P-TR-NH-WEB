@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-
     <header>
         <h1>Tin tức 24h</h1>
         <nav>
@@ -21,29 +20,40 @@
             </ul>
         </nav>
     </header>
-
+    
     <section class="banner">
         <img src="assets/images/banner.jpg" alt="Banner Tin tức">
     </section>
+    
+    <main>
+        <section class="news-list">
+            <h2>Tin mới nhất</h2>
+            <article>
+                <img src="assets/images/news1.jpg" alt="Biến động chứng khoán">
+                <h3><a href="article.html">Biến động chứng khoán: Nhà đầu tư lo lắng</a></h3>
+                <p>Thị trường chứng khoán đang có nhiều biến động bất thường...</p>
+            </article>
 
-    <section class="news-list">
-        <h2>Tin mới nhất</h2>
-        <article>
-            <img src="assets/images/news1.jpg" alt="Tin tức 1">
-            <h3><a href="article.html">Tiêu đề bài viết 1</a></h3>
-            <p>Mô tả ngắn bài viết...</p>
-        </article>
-
-        <article>
-            <img src="assets/images/news2.jpg" alt="Tin tức 2">
-            <h3><a href="article.html">Tiêu đề bài viết 2</a></h3>
-            <p>Mô tả ngắn bài viết...</p>
-        </article>
-    </section>
-
+            <article>
+                <img src="assets/images/news2.jpg" alt="Thời tiết cực đoan">
+                <h3><a href="article.html">Thời tiết cực đoan ảnh hưởng đến sản xuất</a></h3>
+                <p>Miền Bắc đang trải qua đợt rét kỷ lục trong vòng 10 năm qua...</p>
+            </article>
+        </section>
+        
+        <section class="article-content">
+            <h2>Chi tiết bài viết</h2>
+            <img src="assets/images/news1.jpg" alt="Hình ảnh bài viết">
+            <p>Ngày đăng: 26/02/2025</p>
+            <p>Tác giả: Nguyễn Văn A</p>
+            <p>Nội dung bài viết đầy đủ...</p>
+            <button>Chia sẻ Facebook</button>
+            <button>Chia sẻ Twitter</button>
+        </section>
+    </main>
+    
     <footer>
         <p>&copy; 2025 Tin tức 24h - Bản quyền thuộc về nhóm</p>
     </footer>
-
 </body>
 </html>

@@ -20,15 +20,15 @@
 
     <section class="category-news">
         <article>
-            <img src="assets/images/news3.jpg" alt="Tin tức 3">
-            <h3><a href="article.html">Tiêu đề bài viết 3</a></h3>
-            <p>Mô tả ngắn bài viết...</p>
+            <img src="assets/images/news3.jpg" alt="Xung đột khu vực gia tăng">
+            <h3><a href="article.html">Xung đột khu vực leo thang: Cộng đồng quốc tế lo ngại</a></h3>
+            <p>Căng thẳng giữa các quốc gia trong khu vực đang gia tăng, đặt ra nhiều thách thức về an ninh...</p>
         </article>
 
         <article>
-            <img src="assets/images/news4.jpg" alt="Tin tức 4">
-            <h3><a href="article.html">Tiêu đề bài viết 4</a></h3>
-            <p>Mô tả ngắn bài viết...</p>
+            <img src="assets/images/news4.jpg" alt="Biến đổi khí hậu ảnh hưởng toàn cầu">
+            <h3><a href="article.html">Biến đổi khí hậu: Những tác động nghiêm trọng đến thế giới</a></h3>
+            <p>Nhiệt độ trung bình toàn cầu tiếp tục gia tăng, gây ra nhiều hiện tượng thời tiết cực đoan và ảnh hưởng đến đời sống...</p>
         </article>
     </section>
 
@@ -37,4 +37,23 @@
     </footer>
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm kiếm - Tin tức</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+    <header>
+        <input type="text" id="search-box" placeholder="Nhập từ khóa...">
+        <button onclick="searchArticles()">Tìm kiếm</button>
+    </header>
 
+    <section id="search-results">
+        <!-- Hiển thị kết quả tìm kiếm ở đây -->
+    </section>
+
+    <script src="assets/js/search.js"></script>
+</body>
+</html>

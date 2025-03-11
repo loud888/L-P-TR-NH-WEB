@@ -55,7 +55,7 @@
     </footer>
 </body>
 </html>
-<!DOCTYPE html>
+
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -93,8 +93,8 @@
         <p>&copy; 2025 Tin tức 24h</p>
     </footer>
 </body>
-</html>
-<!DOCTYPE html>
+</html> 
+
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
@@ -120,8 +120,8 @@
     </script>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="vi">
+ 
+ <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -168,8 +168,8 @@
     </main>
 </body>
 </html>
-<!DOCTYPE html>
-<html lang="vi">
+ 
+ <html lang="vi">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">

@@ -4,7 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ - Tin tức 24h</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* CSS chung */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        body { background: #f8f9fa; }
+        header { background: #004080; color: white; padding: 15px; text-align: center; }
+        header h1 { margin-bottom: 10px; }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 15px; }
+        nav ul li a { text-decoration: none; color: white; font-weight: bold; padding: 8px 12px; transition: 0.3s; }
+        nav ul li a:hover { background: rgba(255,255,255,0.3); border-radius: 5px; }
+        main { max-width: 800px; margin: 20px auto; padding: 15px; background: white; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        h2 { color: #004080; margin-bottom: 10px; }
+        article { border-bottom: 1px solid #ddd; padding: 10px 0; }
+        article h3 a { text-decoration: none; color: #004080; font-size: 18px; font-weight: bold; }
+        article p { color: #555; }
+        footer { background: #004080; color: white; text-align: center; padding: 15px; margin-top: 20px; }
+        button { background: #004080; color: white; padding: 8px 12px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s; }
+        button:hover { background: #002d5f; }
+    </style>
 </head>
 <body>
     <header>
@@ -20,38 +37,19 @@
             </ul>
         </nav>
     </header>
-    
-    <section class="banner">
-        <img src="assets/images/banner.jpg" alt="Banner Tin tức">
-    </section>
-    
     <main>
         <section class="news-list">
             <h2>Tin mới nhất</h2>
             <article>
-                <img src="assets/images/news1.jpg" alt="Biến động chứng khoán">
                 <h3><a href="article.html">Biến động chứng khoán: Nhà đầu tư lo lắng</a></h3>
                 <p>Thị trường chứng khoán đang có nhiều biến động bất thường...</p>
             </article>
-
             <article>
-                <img src="assets/images/news2.jpg" alt="Thời tiết cực đoan">
                 <h3><a href="article.html">Thời tiết cực đoan ảnh hưởng đến sản xuất</a></h3>
                 <p>Miền Bắc đang trải qua đợt rét kỷ lục trong vòng 10 năm qua...</p>
             </article>
         </section>
-        
-        <section class="article-content">
-            <h2>Chi tiết bài viết</h2>
-            <img src="assets/images/news1.jpg" alt="Hình ảnh bài viết">
-            <p>Ngày đăng: 26/02/2025</p>
-            <p>Tác giả: Nguyễn Văn A</p>
-            <p>Nội dung bài viết đầy đủ...</p>
-            <button>Chia sẻ Facebook</button>
-            <button>Chia sẻ Twitter</button>
-        </section>
     </main>
-    
     <footer>
         <p>&copy; 2025 Tin tức 24h - Bản quyền thuộc về nhóm</p>
     </footer>

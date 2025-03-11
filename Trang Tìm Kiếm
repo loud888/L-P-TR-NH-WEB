@@ -3,19 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Tìm kiếm - Tin tức</title>
-    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* Copy toàn bộ CSS từ trang chủ */
+    </style>
 </head>
 <body>
     <header>
         <input type="text" id="search-box" placeholder="Nhập từ khóa...">
         <button onclick="searchArticles()">Tìm kiếm</button>
     </header>
-
-    <section id="search-results">
-        <!-- Hiển thị kết quả tìm kiếm ở đây -->
-    </section>
-
-    <script src="assets/js/search.js"></script>
+    <main>
+        <section id="search-results">
+            <!-- Hiển thị kết quả tìm kiếm ở đây -->
+        </section>
+    </main>
+    <script>
+        function searchArticles() {
+            alert("Tính năng tìm kiếm đang phát triển!");
+        }
+    </script>
 </body>
 </html>
-

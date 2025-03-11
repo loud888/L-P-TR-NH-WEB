@@ -21,32 +21,28 @@
         </nav>
     </header>
     
-    <section class="banner">
-        <img src="assets/images/banner.jpg" alt="Banner Tin tức">
-    </section>
     
     <main>
         <section class="news-list">
             <h2>Tin mới nhất</h2>
             <article>
-                <img src="assets/images/news1.jpg" alt="Biến động chứng khoán">
+                
                 <h3><a href="article.html">Biến động chứng khoán: Nhà đầu tư lo lắng</a></h3>
                 <p>Thị trường chứng khoán đang có nhiều biến động bất thường...</p>
             </article>
 
             <article>
-                <img src="assets/images/news2.jpg" alt="Thời tiết cực đoan">
+                
                 <h3><a href="article.html">Thời tiết cực đoan ảnh hưởng đến sản xuất</a></h3>
                 <p>Miền Bắc đang trải qua đợt rét kỷ lục trong vòng 10 năm qua...</p>
             </article>
         </section>
         
         <section class="article-content">
-            <h2>Chi tiết bài viết</h2>
-            <img src="assets/images/news1.jpg" alt="Hình ảnh bài viết">
+            <h2>ManUnited thua lần nữa</h2>
             <p>Ngày đăng: 26/02/2025</p>
-            <p>Tác giả: Nguyễn Văn A</p>
-            <p>Nội dung bài viết đầy đủ...</p>
+            <p>Tác giả: Nguyễn Văn Anh</p>
+            <p>ManUnited một lần nữa thua 1-0 đấu với Fullcastle United</p>
             <button>Chia sẻ Facebook</button>
             <button>Chia sẻ Twitter</button>
         </section>
@@ -80,13 +76,11 @@
 
     <section class="category-news">
         <article>
-            <img src="assets/images/news3.jpg" alt="Xung đột khu vực gia tăng">
             <h3><a href="article.html">Xung đột khu vực leo thang: Cộng đồng quốc tế lo ngại</a></h3>
             <p>Căng thẳng giữa các quốc gia trong khu vực đang gia tăng, đặt ra nhiều thách thức về an ninh...</p>
         </article>
 
         <article>
-            <img src="assets/images/news4.jpg" alt="Biến đổi khí hậu ảnh hưởng toàn cầu">
             <h3><a href="article.html">Biến đổi khí hậu: Những tác động nghiêm trọng đến thế giới</a></h3>
             <p>Nhiệt độ trung bình toàn cầu tiếp tục gia tăng, gây ra nhiều hiện tượng thời tiết cực đoan và ảnh hưởng đến đời sống...</p>
         </article>

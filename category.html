@@ -76,21 +76,20 @@
         document.getElementById("category-name").innerText = categoryNames[type] || "Danh mục";
 
         // Hiển thị danh sách bài viết
-        const newsList = document.getElementById("news-list");
-        newsList.innerHTML = ""; // Xóa nội dung cũ trước khi cập nhật
-
-        if (articles[type]) {
-            articles[type].forEach(article => {
-                newsList.innerHTML += `
-                    <article>
-                        <h3><a href="${article.link}">${article.title}</a></h3>
-                        <p>${article.description}</p>
-                    </article>
-                `;
-            });
-        } else {
-            newsList.innerHTML = "<p>Không có bài viết nào.</p>";
-        }
+newsList.innerHTML = ""; // Xóa nội dung cũ trước khi cập nhật
+if (articles[type] !== undefined) {
+    articles[type].forEach(article => {
+        let articleHTML = `
+            <article>
+                <h3><a href="${article.link}">${article.title}</a></h3>
+                <p>${article.description}</p>
+            </article>
+        `;
+        newsList.insertAdjacentHTML("beforeend", articleHTML);
+    });
+} else {
+    newsList.innerHTML = "<p>Không có bài viết nào.</p>";
+}
     </script>
 </body>
 </html>

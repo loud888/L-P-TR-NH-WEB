@@ -4,19 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kinh tế - Tin tức</title>
-    <style>  /* Đặt CSS trực tiếp trong từng file */
+    <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
         body { background: #f8f9fa; }
-        header { background:  #008000; color: white; padding: 15px; text-align: center; }
+        header { background: #008000; color: white; padding: 15px; text-align: center; }
         nav ul { list-style: none; display: flex; justify-content: center; gap: 15px; }
         nav ul li a { text-decoration: none; color: white; font-weight: bold; padding: 8px 12px; transition: 0.3s; }
         nav ul li a:hover { background: rgba(255,255,255,0.3); border-radius: 5px; }
         main { max-width: 800px; margin: 20px auto; padding: 15px; background: white; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h2 { color: #004080; margin-bottom: 10px; }
-        article { border-bottom: 1px solid #ddd; padding: 10px 0; }
-        article h3 a { text-decoration: none; color: #004080; font-size: 18px; font-weight: bold; }
+        h2 { color: #008000; margin-bottom: 10px; }
+        article { border-bottom: 1px solid #ddd; padding: 10px 15px; transition: 0.3s; }
+        article:hover { background: #f1f1f1; }
+        article h3 a { text-decoration: none; color: #008000; font-size: 18px; font-weight: bold; }
         article p { color: #555; }
-        footer { background: #004080; color: white; text-align: center; padding: 15px; margin-top: 20px; } </style>
+        footer { background: #008000; color: white; text-align: center; padding: 15px; margin-top: 20px; }
+    </style>
 </head>
 <body>
     <header>
@@ -31,6 +33,7 @@
         </nav>
     </header>
     <main>
+        <h2>Tin tức kinh tế</h2>
         <article>
             <h3><a href="article.html">Biến động chứng khoán: Nhà đầu tư lo lắng</a></h3>
             <p>Thị trường chứng khoán đang có nhiều biến động bất thường...</p>
@@ -38,6 +41,14 @@
         <article>
             <h3><a href="article.html">Giá vàng tăng cao kỷ lục, nhà đầu tư đổ xô mua vào</a></h3>
             <p>Giá vàng thế giới tăng mạnh trong bối cảnh kinh tế bất ổn...</p>
+        </article>
+        <article>
+            <h3><a href="article.html">Doanh nghiệp khởi nghiệp gặp khó khăn vì lãi suất cao</a></h3>
+            <p>Nhiều công ty mới thành lập đang phải đối mặt với chi phí vay vốn ngày càng gia tăng...</p>
+        </article>
+        <article>
+            <h3><a href="article.html">Xu hướng đầu tư bất động sản năm 2025</a></h3>
+            <p>Chuyên gia dự đoán thị trường bất động sản sẽ có nhiều chuyển biến tích cực...</p>
         </article>
     </main>
     <footer>

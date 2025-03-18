@@ -5,48 +5,147 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Trang chủ - Tin tức 24h</title>
     <style>
-        /* CSS chung */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
-        body { background: #f8f9fa; }
-        header { background: #004080; color: white; padding: 15px; text-align: center; }
+        /* Thiết lập chung */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        body { background: #f0f2f5; color: #333; }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #004080, #002d5f);
+            color: white;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
         header h1 { margin-bottom: 10px; }
-        nav ul { list-style: none; display: flex; justify-content: center; gap: 15px; }
-        nav ul li a { text-decoration: none; color: white; font-weight: bold; padding: 8px 12px; transition: 0.3s; }
-        nav ul li a:hover { background: rgba(255,255,255,0.3); border-radius: 5px; }
-        main { max-width: 800px; margin: 20px auto; padding: 15px; background: white; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h2 { color: #004080; margin-bottom: 10px; }
-        article { border-bottom: 1px solid #ddd; padding: 10px 0; }
-        article h3 a { text-decoration: none; color: #004080; font-size: 18px; font-weight: bold; }
-        article p { color: #555; }
-        footer { background: #004080; color: white; text-align: center; padding: 15px; margin-top: 20px; }
-        button { background: #004080; color: white; padding: 8px 12px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s; }
-        button:hover { background: #002d5f; }
+
+        /* Navigation */
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 10px 15px;
+            transition: all 0.3s ease-in-out;
+            border-radius: 5px;
+        }
+        nav ul li a:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+
+        /* Nội dung chính */
+        main {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Danh sách tin tức */
+        .news-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        article {
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease-in-out;
+        }
+
+        article:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        article h3 a {
+            text-decoration: none;
+            color: #004080;
+            font-size: 18px;
+            font-weight: bold;
+            transition: color 0.3s ease-in-out;
+        }
+
+        article h3 a:hover {
+            color: #002d5f;
+        }
+
+        article p {
+            color: #555;
+            margin-top: 5px;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        footer {
+            background: #004080;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
+            border-top: 4px solid #002d5f;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Tin tức 24h</h1>
+        <h1>📰 Tin tức 24h</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Trang chủ</a></li>
                 <li><a href="category.html?type=world">Thế giới</a></li>
-        <li><a href="category.html?type=economy">Kinh tế</a></li>
-        <li><a href="category.html?type=entertainment">Giải trí</a></li>
+                <li><a href="category.html?type=economy">Kinh tế</a></li>
+                <li><a href="category.html?type=entertainment">Giải trí</a></li>
                 <li><a href="search.html">🔍 Tìm kiếm</a></li>
                 <li><a href="login.html">Đăng nhập</a></li>
+                <li><a href="admin.html">Quản trị</a></li>
             </ul>
         </nav>
     </header>
     <main>
+        <h2 style="color: #004080; text-align: center;">🆕 Tin mới nhất</h2>
         <section class="news-list">
-            <h2>Tin mới nhất</h2>
             <article>
-                <h3><a href="article.html">Biến động chứng khoán: Nhà đầu tư lo lắng</a></h3>
+                <h3><a href="article.html?id=1">Biến động chứng khoán: Nhà đầu tư lo lắng</a></h3>
                 <p>Thị trường chứng khoán đang có nhiều biến động bất thường...</p>
             </article>
             <article>
-                <h3><a href="article.html">Thời tiết cực đoan ảnh hưởng đến sản xuất</a></h3>
+                <h3><a href="article.html?id=2">Thời tiết cực đoan ảnh hưởng đến sản xuất</a></h3>
                 <p>Miền Bắc đang trải qua đợt rét kỷ lục trong vòng 10 năm qua...</p>
+            </article>
+            <article>
+                <h3><a href="article.html?id=3">Chính sách kinh tế mới của chính phủ</a></h3>
+                <p>Chính phủ vừa công bố gói hỗ trợ tài chính nhằm thúc đẩy kinh tế...</p>
+            </article>
+            <article>
+                <h3><a href="article.html?id=4">Giải bóng đá châu Âu sắp khởi tranh</a></h3>
+                <p>Các đội bóng hàng đầu châu Âu đã sẵn sàng cho mùa giải mới...</p>
+            </article>
+            <article>
+                <h3><a href="article.html?id=5">Xu hướng công nghệ AI năm 2025</a></h3>
+                <p>Trí tuệ nhân tạo đang ngày càng phát triển mạnh mẽ với nhiều ứng dụng...</p>
+            </article>
+            <article>
+                <h3><a href="article.html?id=6">Khoa học khám phá hành tinh mới</a></h3>
+                <p>NASA công bố phát hiện về một hành tinh có điều kiện sống...</p>
+            </article>
+            <article>
+                <h3><a href="article.html?id=7">Cảnh báo dịch bệnh mới</a></h3>
+                <p>Bộ Y tế cảnh báo về nguy cơ bùng phát dịch bệnh mới...</p>
+            </article>
+            <article>
+                <h3><a href="article.html?id=8">10 điểm đến du lịch hot năm 2025</a></h3>
+                <p>Các địa điểm du lịch nổi bật mà bạn không thể bỏ qua...</p>
             </article>
         </section>
     </main>
@@ -55,10 +154,3 @@
     </footer>
 </body>
 </html>
-<nav>
-  <a href="index.html">Trang chủ</a> |
-  <a href="category.html">Thế giới</a> |
-  <a href="search.html">🔍 Tìm kiếm</a> |
-  <a href="login.html">Đăng nhập</a> |
-  <a href="admin.html">Quản trị</a>
-</nav>

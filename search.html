@@ -4,21 +4,18 @@
     <meta charset="UTF-8">
     <title>Tìm kiếm - Tin tức</title>
     <style>
-         * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
         body { background: #f8f9fa; }
         header { background: #004080; color: white; padding: 15px; text-align: center; }
-        header h1 { margin-bottom: 10px; }
-        nav ul { list-style: none; display: flex; justify-content: center; gap: 15px; }
-        nav ul li a { text-decoration: none; color: white; font-weight: bold; padding: 8px 12px; transition: 0.3s; }
-        nav ul li a:hover { background: rgba(255,255,255,0.3); border-radius: 5px; }
+        header input { padding: 8px; width: 60%; margin-right: 10px; }
+        header button { background: #ffa500; color: white; padding: 8px 12px; border: none; cursor: pointer; }
         main { max-width: 800px; margin: 20px auto; padding: 15px; background: white; border-radius: 5px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
         h2 { color: #004080; margin-bottom: 10px; }
-        article { border-bottom: 1px solid #ddd; padding: 10px 0; }
-        article h3 a { text-decoration: none; color: #004080; font-size: 18px; font-weight: bold; }
-        article p { color: #555; }
-        footer { background: #004080; color: white; text-align: center; padding: 15px; margin-top: 20px; }
-        button { background: #004080; color: white; padding: 8px 12px; border: none; border-radius: 5px; cursor: pointer; transition: 0.3s; }
-        button:hover { background: #002d5f; }
+        .article { border-bottom: 1px solid #ddd; padding: 10px 0; }
+        .article h3 a { text-decoration: none; color: #004080; font-size: 18px; font-weight: bold; }
+        .article p { color: #555; }
+        .pagination { text-align: center; margin-top: 20px; }
+        .pagination button { background: #004080; color: white; padding: 5px 10px; margin: 5px; border: none; cursor: pointer; }
     </style>
 </head>
 <body>
@@ -28,12 +25,63 @@
     </header>
     <main>
         <section id="search-results">
-            <!-- Hiển thị kết quả tìm kiếm ở đây -->
+            <h2>Kết quả tìm kiếm</h2>
+            <div id="articles-list"></div>
+            <div class="pagination" id="pagination"></div>
         </section>
     </main>
     <script>
+        let articles = [
+            { title: "Biến động chứng khoán: Nhà đầu tư lo lắng", link: "article17.html", summary: "Thị trường chứng khoán đang có nhiều biến động bất thường..." },
+            { title: "Thời tiết cực đoan ảnh hưởng đến sản xuất", link: "article2.html", summary: "Miền Bắc đang trải qua đợt rét kỷ lục trong vòng 10 năm qua..." },
+            { title: "Chính sách kinh tế mới của chính phủ", link: "article3.html", summary: "Chính phủ vừa công bố gói hỗ trợ tài chính nhằm thúc đẩy kinh tế..." },
+            { title: "Giải bóng đá châu Âu sắp khởi tranh", link: "article4.html", summary: "Các đội bóng hàng đầu châu Âu đã sẵn sàng cho mùa giải mới..." },
+            { title: "Xu hướng công nghệ AI năm 2025", link: "article5.html", summary: "Trí tuệ nhân tạo đang ngày càng phát triển mạnh mẽ với nhiều ứng dụng..." },
+            { title: "Khoa học khám phá hành tinh mới", link: "article6.html", summary: "NASA công bố phát hiện về một hành tinh có điều kiện sống..." },
+            { title: "Cảnh báo dịch bệnh mới", link: "article7.html", summary: "Bộ Y tế cảnh báo về nguy cơ bùng phát dịch bệnh mới..." },
+            { title: "10 điểm đến du lịch hot năm 2025", link: "article8.html", summary: "Các địa điểm du lịch nổi bật mà bạn không thể bỏ qua..." },
+            { title: "Xung đột khu vực leo thang: Cộng đồng quốc tế lo ngại", link: "article9.html", summary: "Căng thẳng giữa các quốc gia trong khu vực đang gia tăng..." },
+            { title: "Biến đổi khí hậu: Những tác động nghiêm trọng đến thế giới", link: "article10.html", summary: "Nhiệt độ trung bình toàn cầu tiếp tục gia tăng..." },
+            { title: "Kinh tế toàn cầu suy thoái: Giải pháp nào cho các quốc gia?", link: "article11.html", summary: "Các nền kinh tế lớn đang gặp khó khăn trước tình hình tài chính biến động..." },
+            { title: "Xu hướng công nghệ mới ảnh hưởng đến chính trị thế giới", link: "article12.html", summary: "AI và tự động hóa đang thay đổi cách thức quản lý của các chính phủ..." },
+            { title: "Ngôi sao Hollywood bất ngờ thông báo giải nghệ", link: "article13.html", summary: "Nam diễn viên nổi tiếng đã tuyên bố rời xa màn ảnh..." },
+            { title: "Sự kiện âm nhạc lớn nhất năm thu hút hàng triệu fan", link: "article14.html", summary: "Lễ hội âm nhạc được mong đợi nhất đã chính thức khởi động..." },
+            { title: "Phim bom tấn mới phá kỷ lục phòng vé", link: "article15.html", summary: "Bộ phim hành động mới nhất đang tạo nên cơn sốt tại các rạp chiếu..." },
+            { title: "Sao K-Pop gây sốt với album mới", link: "article16.html", summary: "Nhóm nhạc đình đám vừa ra mắt album mới và lọt top bảng xếp hạng..." },
+            { title: "Giá vàng tăng cao kỷ lục, nhà đầu tư đổ xô mua vào", link: "article18.html", summary: "Giá vàng thế giới tăng mạnh trong bối cảnh kinh tế bất ổn..." },
+            { title: "Doanh nghiệp khởi nghiệp gặp khó khăn vì lãi suất cao", link: "article19.html", summary: "Nhiều công ty mới thành lập đang phải đối mặt với chi phí vay vốn tăng..." },
+            { title: "Xu hướng đầu tư bất động sản năm 2025", link: "article20.html", summary: "Chuyên gia dự đoán thị trường bất động sản sẽ có nhiều chuyển biến tích cực..." }
+        ];
+        
         function searchArticles() {
-            alert("Tính năng tìm kiếm đang phát triển!");
+            let query = document.getElementById("search-box").value.toLowerCase();
+            let results = articles.filter(a => a.title.toLowerCase().includes(query));
+            displayResults(results, 1);
+        }
+        
+        function displayResults(results, page) {
+            let perPage = 2;
+            let start = (page - 1) * perPage;
+            let end = start + perPage;
+            let paginatedResults = results.slice(start, end);
+            
+            let articlesList = document.getElementById("articles-list");
+            articlesList.innerHTML = "";
+            
+            paginatedResults.forEach(a => {
+                articlesList.innerHTML += `<div class='article'>
+                    <h3><a href="${a.link}">${a.title}</a></h3>
+                    <p>${a.summary}</p>
+                </div>`;
+            });
+            
+            let pagination = document.getElementById("pagination");
+            pagination.innerHTML = "";
+            let totalPages = Math.ceil(results.length / perPage);
+            
+            for (let i = 1; i <= totalPages; i++) {
+                pagination.innerHTML += `<button onclick='displayResults(${JSON.stringify(results)}, ${i})'>${i}</button>`;
+            }
         }
     </script>
 </body>

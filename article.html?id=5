@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xu hướng công nghệ AI năm 2025 - Tin tức 24h</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Arial', sans-serif; }
+        body { background: #f0f2f5; color: #333; }
+        header { background: linear-gradient(135deg, #004080, #002d5f); color: white; padding: 20px; text-align: center; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        header h1 { margin-bottom: 10px; }
+        nav ul { list-style: none; display: flex; justify-content: center; gap: 15px; }
+        nav ul li a { text-decoration: none; color: white; font-weight: bold; padding: 10px 15px; transition: all 0.3s ease-in-out; border-radius: 5px; }
+        nav ul li a:hover { background: rgba(255, 255, 255, 0.3); }
+        main { max-width: 900px; margin: 30px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); }
+        .article-content h2 { color: #004080; font-size: 28px; margin-bottom: 15px; }
+        .article-content p { color: #555; line-height: 1.6; margin-bottom: 15px; font-size: 16px; }
+        .article-content img { max-width: 100%; height: auto; border-radius: 8px; margin: 20px 0; }
+        footer { background: #004080; color: white; text-align: center; padding: 15px; margin-top: 30px; border-top: 4px solid #002d5f; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>📰 Tin tức 24h</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="category-world.html">Thế giới</a></li>
+                <li><a href="category-economy.html">Kinh tế</a></li>
+                <li><a href="category-entertainment.html">Giải trí</a></li>
+                <li><a href="search.html">🔍 Tìm kiếm</a></li>
+                <li><a href="signin.html">Đăng nhập</a></li>
+                <li><a href="admin.html">Quản trị</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="article-content">
+            <h2>Xu hướng công nghệ AI năm 2025</h2>
+            <p><strong>Ngày đăng: 23/03/2025</strong></p>
+            <img src="ai-technology.jpg" alt="Công nghệ AI năm 2025">
+            <p>Trí tuệ nhân tạo (AI) đang ngày càng phát triển mạnh mẽ với nhiều ứng dụng đột phá trong năm 2025. Từ y tế, giáo dục đến giao thông, AI đã trở thành công cụ không thể thiếu, giúp tối ưu hóa quy trình và nâng cao chất lượng cuộc sống.</p>
+            <p>Một trong những xu hướng nổi bật là sự phổ biến của AI cá nhân hóa, với các trợ lý ảo thông minh hơn, có khả năng học hỏi và thích nghi với thói quen của từng người dùng. Các công ty như xAI đang dẫn đầu trong việc phát triển AI có khả năng đối thoại tự nhiên và giải quyết vấn đề phức tạp.</p>
+            <p>Ngoài ra, AI kết hợp với thực tế ảo (VR) và thực tế tăng cường (AR) đang tạo nên những trải nghiệm mới trong lĩnh vực giải trí và đào tạo. Trong y tế, các hệ thống AI chẩn đoán bệnh với độ chính xác vượt trội đang được triển khai rộng rãi, hứa hẹn giảm tải cho bác sĩ và tăng cơ hội sống cho bệnh nhân.</p>
+            <p>Tuy nhiên, các chuyên gia cũng cảnh báo về những thách thức như vấn đề bảo mật dữ liệu và sự mất cân bằng trong việc tiếp cận công nghệ. Năm 2025 được dự đoán là năm bản lề để định hình tương lai của AI trong xã hội hiện đại.</p>
+        </section>
+    </main>
+    <footer>
+        <p>© 2025 Tin tức 24h - Bản quyền thuộc về nhóm</p>
+    </footer>
+</body>
+</html>

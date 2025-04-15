@@ -69,6 +69,11 @@ router.post('/login', [
             return res.status(400).json({ message: 'Invalid credentials' });
         }
 
+        // Kiểm tra JWT_SECRET
+        if (!process.env.JWT_SECRET) {
+            return res.status(500).json({ message: 'Server configuration error: JWT_SECRET is missing' });
+        }
+
         const token = jwt.sign(
             { id: user.id, role: user.role },
             process.env.JWT_SECRET,

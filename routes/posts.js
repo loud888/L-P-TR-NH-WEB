@@ -1,6 +1,6 @@
 const express = require('express');
 const { check, validationResult } = require('express-validator');
-const pool = require('../db');
+const { posts, getNextPostId } = require('../data');
 const auth = require('../middleware/auth');
 
 const router = express.Router();
@@ -20,11 +20,17 @@ router.post('/', [
     const userId = req.user.id;
 
     try {
-        const newPost = await pool.query(
-            'INSERT INTO posts (title, content, user_id) VALUES ($1, $2, $3) RETURNING *',
-            [title, content, userId]
-        );
-        res.status(201).json(newPost.rows[0]);
+        const newPost = {
+            id: getNextPostId(),
+            title,
+            content,
+            status: 'draft',
+            user_id: userId,
+            created_at: new Date().toISOString()
+        };
+
+        posts.push(newPost);
+        res.status(201).json(newPost);
     } catch (error) {
         res.status(500).json({ message: 'Server error', error: error.message });
     }
@@ -33,8 +39,7 @@ router.post('/', [
 // Lấy danh sách bài viết
 router.get('/', async (req, res) => {
     try {
-        const posts = await pool.query('SELECT * FROM posts');
-        res.json(posts.rows);
+        res.json(posts);
     } catch (error) {
         res.status(500).json({ message: 'Server error', error: error.message });
     }
@@ -42,25 +47,25 @@ router.get('/', async (req, res) => {
 
 // Cập nhật bài viết
 router.put('/:id', auth(['user', 'editor', 'admin']), async (req, res) => {
-    const postId = req.params.id;
+    const postId = parseInt(req.params.id);
     const { title, content, status } = req.body;
     const userId = req.user.id;
 
     try {
-        const post = await pool.query('SELECT * FROM posts WHERE id = $1', [postId]);
-        if (post.rows.length === 0) {
+        const post = posts.find(post => post.id === postId);
+        if (!post) {
             return res.status(404).json({ message: 'Post not found' });
         }
 
-        if (post.rows[0].user_id !== userId && req.user.role !== 'admin' && req.user.role !== 'editor') {
+        if (post.user_id !== userId && req.user.role !== 'admin' && req.user.role !== 'editor') {
             return res.status(403).json({ message: 'Access denied' });
         }
 
-        const updatedPost = await pool.query(
-            'UPDATE posts SET title = $1, content = $2, status = $3 WHERE id = $4 RETURNING *',
-            [title, content, status || post.rows[0].status, postId]
-        );
-        res.json(updatedPost.rows[0]);
+        post.title = title || post.title;
+        post.content = content || post.content;
+        post.status = status || post.status;
+
+        res.json(post);
     } catch (error) {
         res.status(500).json({ message: 'Server error', error: error.message });
     }
@@ -68,20 +73,21 @@ router.put('/:id', auth(['user', 'editor', 'admin']), async (req, res) => {
 
 // Xóa bài viết
 router.delete('/:id', auth(['user', 'editor', 'admin']), async (req, res) => {
-    const postId = req.params.id;
+    const postId = parseInt(req.params.id);
     const userId = req.user.id;
 
     try {
-        const post = await pool.query('SELECT * FROM posts WHERE id = $1', [postId]);
-        if (post.rows.length === 0) {
+        const postIndex = posts.findIndex(post => post.id === postId);
+        if (postIndex === -1) {
             return res.status(404).json({ message: 'Post not found' });
         }
 
-        if (post.rows[0].user_id !== userId && req.user.role !== 'admin') {
+        const post = posts[postIndex];
+        if (post.user_id !== userId && req.user.role !== 'admin') {
             return res.status(403).json({ message: 'Access denied' });
         }
 
-        await pool.query('DELETE FROM posts WHERE id = $1', [postId]);
+        posts.splice(postIndex, 1);
         res.json({ message: 'Post deleted' });
     } catch (error) {
         res.status(500).json({ message: 'Server error', error: error.message });

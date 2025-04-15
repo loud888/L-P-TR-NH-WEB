@@ -2,7 +2,7 @@ const express = require('express');
 const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { check, validationResult } = require('express-validator');
-const pool = require('../db');
+const { users, getNextUserId } = require('../data');
 const auth = require('../middleware/auth');
 
 const router = express.Router();
@@ -21,18 +21,26 @@ router.post('/register', [
     const { email, password, name } = req.body;
 
     try {
-        const userExists = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
-        if (userExists.rows.length > 0) {
+        // Kiểm tra xem email đã tồn tại chưa
+        const userExists = users.find(user => user.email === email);
+        if (userExists) {
             return res.status(400).json({ message: 'User already exists' });
         }
 
+        // Mã hóa mật khẩu
         const hashedPassword = await bcrypt.hash(password, 10);
-        const newUser = await pool.query(
-            'INSERT INTO users (email, password, name) VALUES ($1, $2, $3) RETURNING *',
-            [email, hashedPassword, name]
-        );
 
-        res.status(201).json(newUser.rows[0]);
+        // Tạo user mới
+        const newUser = {
+            id: getNextUserId(),
+            email,
+            password: hashedPassword,
+            name,
+            role: 'user'
+        };
+
+        users.push(newUser);
+        res.status(201).json(newUser);
     } catch (error) {
         res.status(500).json({ message: 'Server error', error: error.message });
     }
@@ -51,18 +59,18 @@ router.post('/login', [
     const { email, password } = req.body;
 
     try {
-        const user = await pool.query('SELECT * FROM users WHERE email = $1', [email]);
-        if (user.rows.length === 0) {
+        const user = users.find(user => user.email === email);
+        if (!user) {
             return res.status(400).json({ message: 'Invalid credentials' });
         }
 
-        const isMatch = await bcrypt.compare(password, user.rows[0].password);
+        const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) {
             return res.status(400).json({ message: 'Invalid credentials' });
         }
 
         const token = jwt.sign(
-            { id: user.rows[0].id, role: user.rows[0].role },
+            { id: user.id, role: user.role },
             process.env.JWT_SECRET,
             { expiresIn: '1h' }
         );
@@ -79,11 +87,13 @@ router.put('/profile', auth(['user', 'editor', 'admin']), async (req, res) => {
     const userId = req.user.id;
 
     try {
-        const updatedUser = await pool.query(
-            'UPDATE users SET name = $1 WHERE id = $2 RETURNING *',
-            [name, userId]
-        );
-        res.json(updatedUser.rows[0]);
+        const user = users.find(user => user.id === userId);
+        if (!user) {
+            return res.status(404).json({ message: 'User not found' });
+        }
+
+        user.name = name || user.name;
+        res.json(user);
     } catch (error) {
         res.status(500).json({ message: 'Server error', error: error.message });
     }

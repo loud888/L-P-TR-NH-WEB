@@ -100,7 +100,7 @@ router.put('/profile', auth(['user', 'editor', 'admin']), async (req, res) => {
     }
 });
 
-// Lấy danh sách tất cả người dùng (API mới)
+// Lấy danh sách tất cả người dùng 
 router.get('/', auth(['admin']), async (req, res) => {
     try {
         res.json(users);

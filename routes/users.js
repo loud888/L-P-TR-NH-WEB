@@ -21,16 +21,13 @@ router.post('/register', [
     const { email, password, name } = req.body;
 
     try {
-        // Kiểm tra xem email đã tồn tại chưa
         const userExists = users.find(user => user.email === email);
         if (userExists) {
             return res.status(400).json({ message: 'User already exists' });
         }
 
-        // Mã hóa mật khẩu
         const hashedPassword = await bcrypt.hash(password, 10);
 
-        // Tạo user mới
         const newUser = {
             id: getNextUserId(),
             email,
@@ -69,7 +66,6 @@ router.post('/login', [
             return res.status(400).json({ message: 'Invalid credentials' });
         }
 
-        // Kiểm tra JWT_SECRET
         if (!process.env.JWT_SECRET) {
             return res.status(500).json({ message: 'Server configuration error: JWT_SECRET is missing' });
         }
@@ -99,6 +95,15 @@ router.put('/profile', auth(['user', 'editor', 'admin']), async (req, res) => {
 
         user.name = name || user.name;
         res.json(user);
+    } catch (error) {
+        res.status(500).json({ message: 'Server error', error: error.message });
+    }
+});
+
+// Lấy danh sách tất cả người dùng (API mới)
+router.get('/', auth(['admin']), async (req, res) => {
+    try {
+        res.json(users);
     } catch (error) {
         res.status(500).json({ message: 'Server error', error: error.message });
     }
